@@ -6,9 +6,9 @@ function Start-TTS {
         [ValidateRange(0,2)] # there are only 3 voices available by default
             [int]$Voice = 0,
         [Alias('Alt','A')]
-            [switch]$AlternativeVoice, # just a shortcut to `-Voice 1`. Overwrites the $Voice parameter.
-        [Alias('Speed','R','S')]
-            [int]$Rate = 0
+            [switch]$AlternativeVoice, # just a shortcut to Voice = 1. Overwrites the $Voice parameter.
+        [Alias('Speed','S','R')]
+            [int]$Rate = 0 # set to a negative value to slow down the voice, a positive value to speed up.
     )
     
     BEGIN {
@@ -18,6 +18,7 @@ function Start-TTS {
         else { $sp.Voice = $sp.GetVoices().Item($Voice) }
     }
     PROCESS {
+        # If there is no text, open a console to type more stuff
         if([string]::IsNullOrEmpty($Text))
         {
             do {
