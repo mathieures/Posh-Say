@@ -6,7 +6,7 @@ function Start-TTS {
         [ValidateRange(0,2)] # there are only 3 voices available by default
             [int]$Voice = 0,
         [Alias('Alt','A')]
-            [switch]$AlternativeVoice, # just a shortcut to `Voice 1`. Overwrites the $Voice parameter.
+            [switch]$AlternativeVoice, # just a shortcut to `-Voice 1`. Overwrites the $Voice parameter.
         [Alias('Speed','R','S')]
             [int]$Rate = 0
     )
