@@ -1,8 +1,8 @@
 # Posh-Say
 
 ## Installation
-- `. .\Start-TTS.ps1` to import the function
-- `Start-TTS [args]` to use
+1. `. .\Start-TTS.ps1` to import the function
+2. `Start-TTS [args]` to use
 
 ## Features
 - `Voice` parameter: choose 0, 1 or 2 to change the voice (the result depends on the languages installed on your computer)

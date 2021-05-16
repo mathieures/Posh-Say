@@ -14,8 +14,9 @@ function Start-TTS {
     BEGIN {
         $sp = New-Object -ComObject SAPI.SpVoice
         $sp.Rate = $Rate
-        if($AlternativeVoice) { $sp.Voice = $sp.GetVoices().Item(1) }
-        else { $sp.Voice = $sp.GetVoices().Item($Voice) }
+        if($AlternativeVoice) { $Voice = 1 }
+        
+        $sp.Voice = $sp.GetVoices().Item($Voice)
     }
     PROCESS {
         # If there is no text, open a console to type more stuff
